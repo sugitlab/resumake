@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Generate beautiful PDF resumes from Markdown",
   "bin": {
-    "resumake": "./bin/resumake.js"
+    "resumake": "bin/resumake.js"
   },
   "type": "module",
   "files": [
