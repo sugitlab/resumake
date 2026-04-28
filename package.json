@@ -1,5 +1,5 @@
 {
-  "name": "resumake",
+  "name": "@sugitlab/resumake",
   "version": "1.0.0",
   "description": "Generate beautiful PDF resumes from Markdown",
   "bin": {

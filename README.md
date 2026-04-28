@@ -9,13 +9,13 @@
 ## インストール
 
 ```bash
-npm install -g resumake
+npm install -g @sugitlab/resumake
 ```
 
 またはインストールなしで直接実行:
 
 ```bash
-npx resumake
+npx @sugitlab/resumake
 ```
 
 ## 使い方
@@ -58,7 +58,7 @@ Webアプリケーション開発を中心に5年間のエンジニア経験。
 ### 2. PDF を生成する
 
 ```bash
-npx resumake
+npx @sugitlab/resumake
 ```
 
 カレントディレクトリに `resume.pdf` が生成されます。
@@ -68,7 +68,7 @@ npx resumake
 `--theme <name>` フラグでテーマを指定できます。
 
 ```bash
-npx resumake --theme asagi
+npx @sugitlab/resumake --theme asagi
 ```
 
 | テーマ名 | イメージ | 出力ファイル名 |
@@ -84,7 +84,7 @@ npx resumake --theme asagi
 
 ```bash
 for theme in asagi sakura wakakusa fuji kohaku; do
-  npx resumake --theme $theme
+  npx @sugitlab/resumake --theme $theme
 done
 ```
 
