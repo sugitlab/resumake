@@ -1,0 +1,24 @@
+{
+  "name": "resumake",
+  "version": "1.0.0",
+  "description": "Generate beautiful PDF resumes from Markdown",
+  "bin": {
+    "resumake": "./bin/resumake.js"
+  },
+  "type": "module",
+  "files": [
+    "bin/",
+    "src/"
+  ],
+  "scripts": {
+    "start": "node bin/resumake.js"
+  },
+  "dependencies": {
+    "marked": "^12.0.0",
+    "puppeteer": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
+}
