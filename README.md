@@ -55,6 +55,11 @@ Webアプリケーション開発を中心に5年間のエンジニア経験。
 | 言語 | TypeScript, JavaScript, Python |
 | フロントエンド | React, Vue.js, Next.js |
 
+## リンク
+
+- [ポートフォリオ](https://example.com)
+- [GitHub](https://github.com/example)
+
 ## 学歴
 
 ```timeline
@@ -84,6 +89,15 @@ Webアプリケーション開発を中心に5年間のエンジニア経験。
 2019年4月〜2021年3月 | 株式会社Sample | フロントエンドエンジニア | Vue.jsを用いた管理画面の開発
 2021年4月〜現在 | 株式会社Example | ソフトウェアエンジニア | React / TypeScript を用いた SPA の設計・開発
 ```
+````
+
+Markdownのリンクは青色・下線付きで表示されます。`http://` または `https://` の外部リンクには文末に外部リンクアイコンが付きます。
+
+````markdown
+## リンク
+
+- [ポートフォリオ](https://example.com)
+- [GitHub](https://github.com/example)
 ````
 
 ### 2. PDF を生成する

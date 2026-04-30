@@ -31,6 +31,11 @@ Webアプリケーション開発を中心に5年間のエンジニア経験。
 | バックエンド | Node.js, Express, FastAPI |
 | インフラ | AWS, Docker, GitHub Actions |
 
+## リンク
+
+- [ポートフォリオ](https://example.com)
+- [GitHub](https://github.com/example)
+
 ## 学歴
 
 ```timeline

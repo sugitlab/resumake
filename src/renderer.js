@@ -42,9 +42,19 @@ function embedLocalPhoto(profile, assetBasePath) {
   };
 }
 
+function addExternalLinkIcons(html) {
+  return html.replace(/<a\s+href="(https?:\/\/[^"]+)"([^>]*)>([\s\S]*?)<\/a>/g, (match, href, attributes, label) => {
+    if (attributes.includes('resume-external-link')) return match;
+    const nextAttributes = attributes.includes(' class="')
+      ? attributes.replace(' class="', ' class="resume-external-link ')
+      : `${attributes} class="resume-external-link"`;
+    return `<a href="${href}"${nextAttributes}>${label}<span class="resume-external-link-icon" aria-hidden="true">↗</span></a>`;
+  });
+}
+
 export function renderToHtml(markdown, theme = null, options = {}) {
   const { data, content } = parseFrontmatter(markdown);
   const profile = embedLocalPhoto(data, options.assetBasePath);
-  const bodyHtml = marked.parse(transformTimelineBlocks(content));
+  const bodyHtml = addExternalLinkIcons(marked.parse(transformTimelineBlocks(content)));
   return buildHtml(bodyHtml, theme, { ...options, profile });
 }

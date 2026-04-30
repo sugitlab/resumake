@@ -13,7 +13,7 @@ function buildThemeCss(theme) {
     .resume-timeline-marker { border-color: ${accent}; }
     .resume-timeline-item::before { background: ${main}; }
     .resume-timeline-period { color: ${accent}; }
-    a { color: ${accent}; }`;
+    a { color: #1f6feb; }`;
 }
 
 function escapeHtml(value) {
@@ -136,7 +136,20 @@ export function buildHtml(bodyHtml, theme = null, options = {}) {
     th, td { border: 1px solid #bbb; padding: 5px 8px; text-align: left; }
     th { background: #f0f0f0; font-weight: 500; }
 
-    a { color: #111; text-decoration: none; }
+    a {
+      color: #1f6feb;
+      text-decoration: underline;
+      text-decoration-thickness: 0.6px;
+      text-underline-offset: 2px;
+    }
+    .resume-external-link-icon {
+      display: inline-block;
+      margin-left: 0.16em;
+      font-size: 0.78em;
+      line-height: 1;
+      vertical-align: 0.12em;
+      text-decoration: none;
+    }
 
     .resume-profile { margin-bottom: 22px; page-break-inside: avoid; }
     .resume-profile-title {
