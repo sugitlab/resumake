@@ -27,6 +27,7 @@ function escapeHtml(value) {
 
 function normalizeProfile(profile = {}) {
   return {
+    title: profile.title || '履歴書・職務経歴書',
     name: profile.name,
     furigana: profile.furigana,
     englishName: profile.englishName,
@@ -57,7 +58,7 @@ function buildProfileHtml(rawProfile) {
 
   return `
 <section class="resume-profile" aria-label="履歴書基本情報">
-  <div class="resume-profile-title">履歴書</div>
+  <div class="resume-profile-title">${escapeHtml(profile.title)}</div>
   <table class="resume-profile-table">
     <colgroup>
       <col class="resume-profile-label-column">

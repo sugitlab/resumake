@@ -39,6 +39,7 @@ frontmatter:
   resume.md の先頭に氏名や顔写真を指定できます。
 
   ---
+  title: 履歴書・職務経歴書
   name: 山田 太郎
   furigana: やまだ たろう
   englishName: Taro Yamada
@@ -136,6 +137,7 @@ function buildDefaultOutputPath(inputPath, themeName) {
 
 function buildSampleMarkdown() {
   return `---
+title: 履歴書・職務経歴書
 name: 山田 太郎
 furigana: やまだ たろう
 englishName: Taro Yamada

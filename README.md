@@ -26,6 +26,7 @@ npx @sugitlab/resumake
 
 ````markdown
 ---
+title: 履歴書・職務経歴書
 name: 山田 太郎
 furigana: やまだ たろう
 englishName: Taro Yamada
@@ -73,6 +74,7 @@ Webアプリケーション開発を中心に5年間のエンジニア経験。
 
 | キー | 表示項目 | 例 |
 |---|---|---|
+| `title` | 冒頭タイトル | `履歴書・職務経歴書` |
 | `name` | 氏名 | `山田 太郎` |
 | `furigana` | ふりがな | `やまだ たろう` |
 | `englishName` | 英字名 | `Taro Yamada` |

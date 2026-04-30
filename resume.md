@@ -1,4 +1,5 @@
 ---
+title: 履歴書・職務経歴書
 name: 山田 太郎
 furigana: やまだ たろう
 englishName: Taro Yamada
