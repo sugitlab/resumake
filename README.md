@@ -24,12 +24,18 @@ npx @sugitlab/resumake
 
 カレントディレクトリに `resume.md` を配置します。
 
-```markdown
-# 山田 太郎
-
-- **Email**: taro.yamada@example.com
-- **GitHub**: github.com/taro-yamada
-- **所在地**: 東京都
+````markdown
+---
+name: 山田 太郎
+furigana: やまだ たろう
+englishName: Taro Yamada
+photo: ./photo.jpg
+birthDate: 1996年4月1日
+age: 30
+address: 〒100-0001 東京都千代田区千代田1-1
+phone: 090-1234-5678
+email: taro.yamada@example.com
+---
 
 ## 職務要約
 
@@ -37,11 +43,10 @@ Webアプリケーション開発を中心に5年間のエンジニア経験。
 
 ## 職務経歴
 
-### 株式会社Example（2021年4月 〜 現在）
-**ソフトウェアエンジニア**
-
-- React / TypeScript を用いた SPA の設計・開発
-- Node.js + PostgreSQL による REST API 設計
+```timeline
+2019年4月〜2021年3月 | 株式会社Sample | フロントエンドエンジニア | Vue.jsを用いた管理画面の開発
+2021年4月〜現在 | 株式会社Example | ソフトウェアエンジニア | React / TypeScript を用いた SPA の設計・開発
+```
 
 ## スキル
 
@@ -52,8 +57,34 @@ Webアプリケーション開発を中心に5年間のエンジニア経験。
 
 ## 学歴
 
-- 2019年3月 ○○大学 情報工学部 卒業
+```timeline
+2015年4月 | ○○大学 情報工学部 | 入学
+2019年3月 | ○○大学 情報工学部 | 卒業
 ```
+````
+
+`resume.md` の先頭に frontmatter を書くと、PDF の冒頭に履歴書形式の基本情報欄が表組みでレンダリングされます。
+
+| キー | 表示項目 | 例 |
+|---|---|---|
+| `name` | 氏名 | `山田 太郎` |
+| `furigana` | ふりがな | `やまだ たろう` |
+| `englishName` | 英字名 | `Taro Yamada` |
+| `photo` | 顔写真 | `./photo.jpg` |
+| `birthDate` | 生年月日 | `1996年4月1日` |
+| `age` | 満年齢 | `30` |
+| `address` | 現住所 | `〒100-0001 東京都千代田区千代田1-1` |
+| `phone` | 電話番号 | `090-1234-5678` |
+| `email` | メールアドレス | `taro.yamada@example.com` |
+
+職歴や学歴を時系列表示したい場合は、`timeline` コードフェンスを使います。各行は `年月 | タイトル | 補足 | 説明` の順で書き、補足と説明は省略できます。
+
+````markdown
+```timeline
+2019年4月〜2021年3月 | 株式会社Sample | フロントエンドエンジニア | Vue.jsを用いた管理画面の開発
+2021年4月〜現在 | 株式会社Example | ソフトウェアエンジニア | React / TypeScript を用いた SPA の設計・開発
+```
+````
 
 ### 2. PDF を生成する
 
@@ -61,7 +92,33 @@ Webアプリケーション開発を中心に5年間のエンジニア経験。
 npx @sugitlab/resumake
 ```
 
-カレントディレクトリに `resume.pdf` が生成されます。
+カレントディレクトリの `resume.md` を読み込み、`resume.pdf` が生成されます。
+
+Markdownファイルを指定する場合:
+
+```bash
+npx @sugitlab/resumake docs/resume-ja.md
+```
+
+出力先を指定する場合:
+
+```bash
+npx @sugitlab/resumake docs/resume-ja.md --output dist/resume.pdf
+```
+
+ヘルプを表示する場合:
+
+```bash
+npx @sugitlab/resumake --help
+```
+
+サンプルMarkdownを生成する場合:
+
+```bash
+npx @sugitlab/resumake --init
+```
+
+実行したディレクトリに `resume-sample.md` が生成されます。既に同名ファイルがある場合は上書きせずに終了します。
 
 ## カラーテーマ
 
@@ -69,6 +126,12 @@ npx @sugitlab/resumake
 
 ```bash
 npx @sugitlab/resumake --theme asagi
+```
+
+短いオプション名も使えます。
+
+```bash
+npx @sugitlab/resumake resume.md -t asagi -o resume-asagi.pdf
 ```
 
 | テーマ名 | イメージ | 出力ファイル名 |
