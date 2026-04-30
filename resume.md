@@ -3,6 +3,7 @@ name: 山田 太郎
 furigana: やまだ たろう
 englishName: Taro Yamada
 photo: './face.png'
+updatedAt: 2026年4月30日
 birthDate: 1996年4月1日
 age: 30
 address: 〒100-0001 東京都千代田区千代田1-1

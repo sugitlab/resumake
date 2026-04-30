@@ -52,9 +52,20 @@ function addExternalLinkIcons(html) {
   });
 }
 
-export function renderToHtml(markdown, theme = null, options = {}) {
+function renderMarkdown(markdown, theme = null, options = {}) {
   const { data, content } = parseFrontmatter(markdown);
   const profile = embedLocalPhoto(data, options.assetBasePath);
   const bodyHtml = addExternalLinkIcons(marked.parse(transformTimelineBlocks(content)));
-  return buildHtml(bodyHtml, theme, { ...options, profile });
+  return {
+    html: buildHtml(bodyHtml, theme, { ...options, profile }),
+    metadata: data,
+  };
+}
+
+export function renderToHtml(markdown, theme = null, options = {}) {
+  return renderMarkdown(markdown, theme, options).html;
+}
+
+export function renderResume(markdown, theme = null, options = {}) {
+  return renderMarkdown(markdown, theme, options);
 }

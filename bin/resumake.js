@@ -2,7 +2,7 @@
 import { readFileSync, existsSync, writeFileSync } from 'fs';
 import { basename, dirname, extname, isAbsolute, join, resolve } from 'path';
 import { pathToFileURL } from 'url';
-import { renderToHtml } from '../src/renderer.js';
+import { renderResume } from '../src/renderer.js';
 import { generatePdf } from '../src/pdf.js';
 import { themes } from '../src/themes.js';
 
@@ -43,6 +43,7 @@ frontmatter:
   furigana: やまだ たろう
   englishName: Taro Yamada
   photo: ./face.png
+  updatedAt: 2026年4月30日
   birthDate: 1996年4月1日
   age: 30
   address: 東京都
@@ -139,6 +140,7 @@ name: 山田 太郎
 furigana: やまだ たろう
 englishName: Taro Yamada
 photo: ./face.png
+updatedAt: 2026年4月30日
 birthDate: 1996年4月1日
 age: 30
 address: 〒100-0001 東京都千代田区千代田1-1
@@ -235,13 +237,15 @@ if (!existsSync(inputPath)) {
 const markdown = readFileSync(inputPath, 'utf-8');
 console.log(`${inputPath} を読み込みました。PDF を生成中... (テーマ: ${themeName})`);
 
-const html = renderToHtml(markdown, themes[themeName], {
+const { html, metadata } = renderResume(markdown, themes[themeName], {
   assetBasePath,
   baseHref: pathToFileURL(`${assetBasePath}/`).href,
 });
 
 try {
-  await generatePdf(html, outputPath);
+  await generatePdf(html, outputPath, {
+    updatedAt: metadata.updatedAt,
+  });
   console.log(`${isAbsolute(outputPath) ? basename(outputPath) : outputPath} を生成しました: ${outputPath}`);
 } catch (err) {
   console.error('PDF生成中にエラーが発生しました:');

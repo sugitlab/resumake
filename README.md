@@ -30,6 +30,7 @@ name: 山田 太郎
 furigana: やまだ たろう
 englishName: Taro Yamada
 photo: ./photo.jpg
+updatedAt: 2026年4月30日
 birthDate: 1996年4月1日
 age: 30
 address: 〒100-0001 東京都千代田区千代田1-1
@@ -76,6 +77,7 @@ Webアプリケーション開発を中心に5年間のエンジニア経験。
 | `furigana` | ふりがな | `やまだ たろう` |
 | `englishName` | 英字名 | `Taro Yamada` |
 | `photo` | 顔写真 | `./photo.jpg` |
+| `updatedAt` | 更新日 | `2026年4月30日` |
 | `birthDate` | 生年月日 | `1996年4月1日` |
 | `age` | 満年齢 | `30` |
 | `address` | 現住所 | `〒100-0001 東京都千代田区千代田1-1` |
@@ -171,6 +173,8 @@ done
 - **余白**: 上下 20mm・左右 18mm
 - **フォント**: Noto Sans JP（Google Fonts）
 - **デフォルト**: モノクロ・ATS スキャン対応レイアウト
+- **ヘッダー**: frontmatter の `updatedAt` を右上に表示
+- **フッター**: 中央にページ番号を表示
 
 ## エラーメッセージ
 
